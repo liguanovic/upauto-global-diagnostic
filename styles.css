@@ -31,8 +31,12 @@ ul {
     list-style: none;
 }
 
-
 [id="nav"] {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     background-color: white;
     border-bottom: 1px solid black;
     display: flex;
@@ -71,8 +75,17 @@ ul {
     color: #FF6060;
 }
 
-.social-link img {
+[id="nav"] .logo {
+    width: 100px;
+    height: auto;
+}
+
+[id="nav"] .social-link img {
     width: 20px;
+}
+
+[id="nav"] .social-link img:hover {
+    transform: scale(1.3);
 }
 
 figure {
@@ -120,11 +133,29 @@ header h1::before {
     background-color: var(--primary-color);
 }
 
+h2 {
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 2rem;
+    background-color: var(--primary-color);
+}
+
 header p {
     margin-bottom: 2rem;
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.75rem;
+    text-align: center;
 }
 
 button {
@@ -220,7 +251,7 @@ button:hover {
 }
 
 .service__image {
-    height: 280px;
+    height: 260px;
 }
 
 .service__list {
@@ -259,6 +290,33 @@ button:hover {
 
 b {
     color: var(--primary-color);
+}
+
+[id="service"] .service_title {
+    display: flex;
+    justify-content: center;
+}
+
+[id="experience"] {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+[id="experience"] p {
+    margin: 2rem 0 0;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+[id="service"] .service_texte {
+    margin: 2rem auto 0;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.75rem;
+    text-align: center;
+    max-width: var(--max-width);
 }
 
 .experience__container :is(.section__subheader, .section__header) {
@@ -386,29 +444,36 @@ b {
     max-width: 40rem;
     margin: 0.5rem 0;
     padding: 1rem;
-    color: white;
-    border: none;
+    color: black;
+    border: 1px solid;
+    border-color: var(--primary-color);
     border-radius: 0.5rem;
-    background: var(--gradient);
+    background: white;
     resize: none;
 }
 
-#contact p.error-message,
-#contact p.submit-status {
+[id="contact"] input:focus,
+[id="contact"] textarea:focus {
+    outline: none;
+    border: 2px solid #FF6060;
+}
+
+[id="contact"] p.error-message,
+[id="contact"] p.submit-status {
     margin: 0;
     display: none;
     font-size: 0.9rem;
 }
 
-#contact p.error-message.visible,
-#contact p.submit-status.visible {
+[id="contact"]t p.error-message.visible,
+[id="contact"]t p.submit-status.visible {
     display: block;
     margin-bottom: 10px;
 }
 
 input::placeholder,
 textarea::placeholder {
-    color: white;
+    color: black;
 }
 
 
@@ -615,6 +680,15 @@ textarea::placeholder {
 }
 
 @media (width > 768px) {
+    section {
+        padding: 20px;
+    }
+
+    #nav .logo {
+        width: 200px;
+        height: auto;
+    }
+
     header::before {
         height: calc(100% - 4rem);
     }
