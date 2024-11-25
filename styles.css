@@ -58,7 +58,7 @@ ul {
 }
 
 [id="nav"] ul li {
-    padding-inline: 10px;
+    padding-inline: 7px;
     cursor: pointer;
 }
 
@@ -206,7 +206,7 @@ button:hover {
 
 .steps__card span {
     display: inline-block;
-    margin-bottom: 2rem;
+    margin: 2rem;
     padding: 10px 17px;
     font-size: 1.75rem;
     color: var(--primary-color);
@@ -298,26 +298,64 @@ b {
 }
 
 #packages h3 {
+    text-align: center;
     margin-bottom: 30px;
 }
 
-.steps__card label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 15px;
-    cursor: pointer;
+#packages span {
+    margin: 1rem 2rem;
 }
 
-.steps__card label i {
-    margin-right: 10px;
+#packages .steps__grid {
+    margin: 20px;
+}
+
+#packages .steps__card {
+    background-color: #f2f2f2;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 600px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#packages .steps__card li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 10px;
+}
+
+#packages a {
+    display: inline-block;
+}
+
+#packages .steps__card label {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+
+#packages .steps__card label i {
+    position: absolute;
+    left: 0;
     color: green;
     font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-right: 10px;
 }
+
+
 
 [id="experience"] {
     max-width: var(--max-width);
@@ -716,6 +754,10 @@ textarea::placeholder {
         height: auto;
     }
 
+    #nav ul li {
+        padding-inline: 10px;
+    }
+
     header::before {
         height: calc(100% - 4rem);
     }
@@ -742,6 +784,10 @@ textarea::placeholder {
     .packages-article {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    #packages .steps__grid {
+        margin: 10px;
     }
 
     .experience__content img {
@@ -786,5 +832,12 @@ textarea::placeholder {
 
     #footer .links i {
         font-size: 1.2rem;
+    }
+}
+
+@media (width > 1000px) {
+    #packages .steps__grid {
+        margin-left: 50px;
+        margin-right: 50px;
     }
 }
