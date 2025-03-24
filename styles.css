@@ -20,6 +20,7 @@ body {
 
 main {
     margin: 10px;
+    margin: 0 10px;
 }
 
 a {
@@ -404,7 +405,7 @@ b {
 }
 
 [id="experience"] p {
-    margin: 2rem 0 0;
+    margin: 0 15px;
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.75rem;
@@ -412,7 +413,7 @@ b {
 }
 
 [id="service"] .service_texte {
-    margin: 2rem auto 0;
+    margin: 0 15px;
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.75rem;
